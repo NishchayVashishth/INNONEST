@@ -1,0 +1,114 @@
+<html></html>
+ <head>
+  <title>
+  Orders
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .navbar img {
+            height: 50px;
+        }
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .nav-links a {
+            margin-left: 80px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .navbar .nav-links a.active {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .navbar .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .user-info i {
+            margin-right: 5px;
+        }
+        .content {
+            margin-top: 100px;
+        }
+        .content img {
+            width: 50px;
+            height: 50px;
+        }
+        .content p {
+            color: #888888;
+            font-size: 18px;
+        }
+        .content button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="navbar">
+   <img alt="Company Logo" height="50" src="Images/Coin.png" width="100"/>
+   <div class="nav-links">
+    <a href="Dashboard.html">
+     Dashboard
+    </a>
+    <a class="active" href="Orders.html">
+     Orders
+    </a>
+    <a href="holdings.html">
+     Holdings
+    </a>
+    <a href="position.html">
+     Positions
+    </a>
+    <a href="funds.html">
+     Funds
+    </a>
+   </div>
+   <div class="user-info">
+    <i class="fas fa-bell">
+    </i>
+    <i class="fas fa-user">
+    </i>
+    <span>
+     Name
+    </span>
+   </div>
+  </div>
+  <div class="content">
+   <img alt="ORDER IMG" height="50" src="Images/BOOKS.png" width="50"/>
+   <p>
+    You don’t have any orders yet !
+   </p>
+   <button class="btn">   
+    <a href="Dashboard.html" style="text-decoration: none;">
+        <div class="no-link">
+       Get Started
+        </div>
+   </a>
+   </button>
+  </div>
+ </body>
+</html>

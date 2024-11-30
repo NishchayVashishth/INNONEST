@@ -1,0 +1,289 @@
+<html>
+<head>
+    <title>Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 30%;
+            background-color: #f5f5f5;
+            padding: 10px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .content {
+            width: 70%;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .header .nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .header .nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+        .header .nav a.active {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .header .user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .header .user i {
+            font-size: 20px;
+        }
+        .header .user span {
+            font-size: 16px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #e0d7e9;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .search-bar input {
+            border: none;
+            background: none;
+            outline: none;
+            flex: 1;
+            padding: 5px;
+        }
+        .search-bar i {
+            font-size: 20px;
+            color: #888;
+        }
+        .stock-list {
+            margin-top: 20px;
+        }
+        .stock-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .stock-list th, .stock-list td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .stock-list th {
+            text-align: left;
+        }
+        .stock-list td {
+            text-align: right;
+        }
+        .stock-list td:first-child {
+            text-align: left;
+        }
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .pagination .page-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        .pagination button {
+            background-color: #ddd;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .pagination button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .dashboard {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .dashboard h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .dashboard .balance {
+            display: flex;
+            gap: 20px;
+        }
+        .balance-item {
+            text-align: center;
+        }
+        .balance-item h2 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .balance-item p {
+            margin: 0;
+            color: #888;
+        }
+        .balance-item .value {
+            color: green;
+        }
+        .chart {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .chart h2 {
+            margin: 0 0 20px 0;
+        }
+        .positions {
+            text-align: right;
+            color: #007bff;
+            cursor: pointer;
+        }
+        .logo div {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div>
+                NIFTY50
+                <span style="color: green;">101214.20</span>
+                <span style="text-align: right;">0.27%</span>
+            </div>
+            <div>
+                SENSEX
+                <span style="color: green;">32998.68</span>
+                <span style="text-align: right;">0.23%</span>
+            </div>
+        </div>
+        <div class="search-bar">
+            <i class="fas fa-bars"></i>
+            <input placeholder="Search eg. Mcx gold, infy bse, nifty fut" type="text"/>
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="stock-list">
+            <table>
+                <tr>
+                    <th>INFY</th>
+                    <td>1.29%</td>
+                    <td class="value">1161.55</td>
+                </tr>
+                <tr>
+                    <th>GMRINFRA</th>
+                    <td>1.14%</td>
+                    <td class="value">17.55</td>
+                </tr>
+                <tr>
+                    <th>SBIN</th>
+                    <td>0.50%</td>
+                    <td class="value">249.20</td>
+                </tr>
+                <tr>
+                    <th>GTPL</th>
+                    <td>0.07%</td>
+                    <td class="value">136.00</td>
+                </tr>
+                <tr>
+                    <th>CANIBK</th>
+                    <td>1.29%</td>
+                    <td class="value">252.60</td>
+                </tr>
+                <tr>
+                    <th>NMDC</th>
+                    <td>0.25%</td>
+                    <td class="value">118.20</td>
+                </tr>
+            </table>
+        </div>
+        <div class="pagination">
+            <div class="page-buttons">
+                <button class="active">1</button>
+                <button>2</button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header">
+            <div class="nav">
+                <a class="active" href="#">Dashboard</a>
+                <a href="Orders.html">Orders</a>
+                <a href="holdings.html">Holdings</a>
+                <a href="position.html">Positions</a>
+                <a href="funds.html">Funds</a>
+            </div>
+            <div class="user">
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-user"></i>
+                <span>Name</span>
+            </div>
+        </div>
+        <div class="dashboard">
+            <h1>Hi, Kiran</h1>
+            <div class="balance">
+                <div class="balance-item">
+                    <h2>0</h2>
+                    <p>Equity</p>
+                    <p>Available balance</p>
+                </div>
+                <div class="balance-item">
+                    <h2>0</h2>
+                    <p>Margins used</p>
+                    <p>Account value</p>
+                </div>
+                <div class="balance-item">
+                    <h2 class="value">0</h2>
+                    <p>Holdings (0)</p>
+                    <p>P&amp;L</p>
+                </div>
+            </div>
+        </div>
+        <div class="chart">
+            <h2>Market Overview</h2>
+            <!-- TradingView Widget placed here -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div class="tradingview-widget-copyright">
+                    <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+                        <span class="blue-text">Track all markets on TradingView</span>
+                    </a>
+                </div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                {
+                    "symbol": "BSE:SENSEX",
+                    "width": "100%",
+                    "height": "500",
+                    "locale": "en",
+                    "dateRange": "12M",
+                    "colorTheme": "dark",
+                    "isTransparent": false,
+                    "autosize": true,
+                    "largeChartUrl": ""
+                }
+                </script>
+            </div>
+        </div>
+        <div class="positions">Positions</div>
+    </div>
+</body>
+</html>
